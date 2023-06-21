@@ -26,3 +26,6 @@ RUN TDIR=$(mktemp -d) \
  && rm -rf "$TDIR"
 
 ###
+RUN apk add git
+RUN git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs 
+RUN ~/.config/emacs/bin/doom install --config --no-env --install --no-fonts
