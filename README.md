@@ -70,6 +70,8 @@ Be aware that the local .doom.d may be adjusted accordingly, e.g.
 
 - commit `(cnfonts-enable)`
 
+Make sure to run: `M-x doom/reload` each time docker container recreated
+
 # Customize
 
 Some packages need extra binaries in the container (e.g. `magit` needs `git`). There are to ways you can deal with it
