@@ -72,6 +72,14 @@ Be aware that the local .doom.d may be adjusted accordingly, e.g.
 
 Make sure to run: `M-x doom/reload` each time docker container recreated
 
+# Use `rclone` to sync files
+
+- See: https://forum.rclone.org/t/how-to-set-up-rclone-webgui-server-as-a-docker-container/14330
+- If using dropbox, need setup dropbox developer app
+- Can use host crontab to trigger `rclone bisync` periodically
+- The first time to run `rclone bisync`, need to add `--resync` flag
+- do not use -t for docker commands in crontab
+
 # Customize
 
 Some packages need extra binaries in the container (e.g. `magit` needs `git`). There are to ways you can deal with it

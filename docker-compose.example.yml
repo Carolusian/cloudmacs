@@ -26,4 +26,14 @@ services:
       # map your personal files here you want to make accessible to cloudmacs
       # WARNING: be careful mapping more than necesarry (e.g. whole hard drives) if you're planning to expose your container to the outside world
       - ${HOME}/data:/home/emacs/data
+  rclone:
+    image: rclone/rclone:latest
+    restart: unless-stopped
+    command: rcd --rc-web-gui --rc-addr :5572 --rc-user user --rc-pass password 
+    ports:
+      - "5572:5572"
+    environment:
+      - PHP_TZ=YOU_TIMEZONE
+      - PUID=1000
+      - PGID=1000
 
